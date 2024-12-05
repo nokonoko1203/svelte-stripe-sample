@@ -3,12 +3,12 @@
 	import stripeClient from "$lib/stripe/client";
 	import "@sveltejs/kit";
 
-	type product = {
+	type Product = {
 		id: string;
 		title: string;
 		lookup_key: string;
 	};
-	const products: product[] = [
+	const products: Product[] = [
 		{
 			id: "prod_RKzfg6gMWnjo4H",
 			title: "のこのこスタンダード",
@@ -45,7 +45,7 @@
 		close();
 	};
 
-	const startCheckout = async (product: product) => {
+	const startCheckout = async (product: Product) => {
 		isProcessing = true;
 		const client = makeApiClient(fetch);
 		try {
